@@ -17,7 +17,7 @@ public class TotalPriceService {
         double oneQuadratMetterFoilPrice = variableParametersOperation.getOneQuadratMetterFoilPrice();
 
         double totalPrice;
-        double quadratMetter;
+        double quadratMetter; // промежуточный параметр площади в метрах квадратных. Учавствует в расчетах.
         double getTotalFoilExpense;
         double getTotalWorkPrice;
 
@@ -29,8 +29,10 @@ public class TotalPriceService {
             quadratMetter = (widthSM * lengthSM) / COEFFICIENT_METER;
         }
 
-        getTotalFoilExpense = (quantity * quadratMetter * oneQuadratMetterFoilPrice) * COEFFICIENT_NDS;
+        getTotalFoilExpense = (((quantity * quadratMetter) * COEFFICIENT_WORK) * oneQuadratMetterFoilPrice) * COEFFICIENT_NDS;
+
         getTotalWorkPrice = (montageWorkPrice + oneOttiskPrice * quantity) * COEFFICIENT_WORK;
+
         totalPrice = getTotalWorkPrice + getTotalFoilExpense;
 
         return totalPrice;
