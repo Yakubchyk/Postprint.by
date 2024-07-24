@@ -1,6 +1,5 @@
-package by.operation;
+package by.service;
 
-import by.model.PriceOperation;
 import by.model.QuantityOperation;
 
 public class FoilExpenseService {

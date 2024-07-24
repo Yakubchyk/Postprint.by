@@ -1,4 +1,4 @@
-package by.operation;
+package by.service;
 
 public class TotalPriceService {
     WorkPriceService workPriceService = new WorkPriceService();

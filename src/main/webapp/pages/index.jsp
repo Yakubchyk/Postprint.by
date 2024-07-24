@@ -24,51 +24,44 @@
         <div class="row align-items-start">
             <div class="col-3"></div>
             <div class="col-6 mt-5">
-
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip01" class="form-label">Стоимость фольги</label>
-                        <input type="text" class="form-control" id="validationTooltip01" value="" required>
-
-                    </div>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip02" class="form-label">Стоимость оттиска</label>
-                        <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                <form class="row g-3" action="/" method="post">
+                    <div class="col-md-4 mb-3">
+                        <label>Стоимость оттиска</label>
+                        <input type="text" name="oneOttiskPrice" id="oneOttiskPrice" class="form-control" value="${oneOttiskPrice}" placeholder="oneOttiskPrice">
 
                     </div>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip02" class="form-label">Стоимость приладки</label>
-                        <input type="text" class="form-control" id="validationTooltip03" value="" required>
+                    <div class="col-md-4 mb-3">
+                        <label>Стоимость приладки</label>
+                        <input type="text" name="montageWorkPrice" id="montageWorkPrice" class="form-control" value="${montageWorkPrice}"
+                               placeholder="montageWorkPrice">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Стоимость фольги М2.</label>
+                        <input type="text" name="oneQuadratMetterFoilPrice" id="oneQuadratMetterFoilPrice" class="form-control" value="${oneQuadratMetterFoilPrice}"
+                               placeholder="oneQuadratMetterFoilPrice">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Ширина в СМ.</label>
+                        <input type="text" name="widthSM" id="widthSM" class="form-control" value="${widthSM}"
+                               placeholder="widthSM">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Длинна в СМ.</label>
+                        <input type="text" name="lengthSM" id="lengthSM" class="form-control" value="${lengthSM}"
+                               placeholder="lengthSM">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <input type="text" name="quantity" id="quantity" class="form-control" value="${quantity}"
+                               class="form-control" placeholder="quantity">
+                    </div>
 
+                    <div class="alert alert-info mt-3" role="alert">
+                        <h3>Result: <span id="result">${result}</span></h3>
                     </div>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip01" class="form-label">Ширина в см.</label>
-                        <input type="text" class="form-control" id="validationTooltip04" value="" required>
 
-                    </div>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip01" class="form-label">Длинна в см.</label>
-                        <input type="text" class="form-control" id="validationTooltip05" value="" required>
-
-                    </div>
-                    <div class="col-md-4 position-relative">
-                        <label for="validationTooltip01" class="form-label">Тираж</label>
-                        <input type="text" class="form-control" id="validationTooltip06" value="" required>
-
-                    </div>
-                    <div class="alert alert-info mt-3 col-md-4 mb-3 position-relative" role="alert">
-                        <h6>Фольга: <span id="result1">${result}</span></h6>
-                    </div>
-                    <div class="alert alert-info mt-3 col-md-4 mb-3 position-relative" role="alert">
-                        <h6>Работа: <span id="result2">${result}</span></h6>
-                    </div>
-                    <div class="alert alert-info mt-3 col-md-4 mb-3 position-relative" role="alert">
-                        <h6>ИТОГО: <span id="result3">${result}</span></h6>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+
             </div>
             <div class="col-3"></div>
         </div>

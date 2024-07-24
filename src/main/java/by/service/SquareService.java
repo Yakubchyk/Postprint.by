@@ -1,4 +1,4 @@
-package by.operation;
+package by.service;
 
 import by.model.SquareOperation;
 
