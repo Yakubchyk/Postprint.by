@@ -17,54 +17,52 @@
 <jsp:include page="_bootstrap.jsp"/>
 <jsp:include page="_header.jsp"/>
 
-<div class="container">
-    <div class="container text-center">
-        <h3>Калькулятор расчета стоимости тиснения</h3>
+<div class="container text-center">
+    <h3>Калькулятор расчета стоимости тиснения</h3>
 
-        <div class="row align-items-start">
-            <div class="col-3"></div>
-            <div class="col-6 mt-5">
-                <form class="row g-3" action="/" method="post">
-                    <div class="col-md-4 mb-3">
-                        <label>Стоимость оттиска</label>
-                        <input type="text" name="oneOttiskPrice" id="oneOttiskPrice" class="form-control" value="${oneOttiskPrice}" placeholder="oneOttiskPrice">
+    <div class="row align-items-start">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5">
+            <form class="row g-3" action="/" method="post">
+                <div class="col-md-4 mb-3">
+                    <label>Стоимость оттиска</label>
+                    <input type="text" name="oneOttiskPrice" class="form-control" value="${oneOttiskPrice}"
+                           placeholder="oneOttiskPrice">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Стоимость приладки</label>
+                    <input type="text" name="montageWorkPrice" class="form-control" value="${montageWorkPrice}"
+                           placeholder="montageWorkPrice">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Стоимость фольги М2.</label>
+                    <input type="text" name="oneQuadratMetterFoilPrice" class="form-control"
+                           value="${oneQuadratMetterFoilPrice}" placeholder="oneQuadratMetterFoilPrice">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Ширина в СМ.</label>
+                    <input type="text" name="widthSM" class="form-control" value="${widthSM}" placeholder="widthSM">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Длинна в СМ.</label>
+                    <input type="text" name="lengthSM" class="form-control" value="${lengthSM}" placeholder="lengthSM">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Тираж ШТ.</label>
+                    <input type="text" name="quantity" class="form-control" value="${quantity}" placeholder="quantity">
+                </div>
 
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Стоимость приладки</label>
-                        <input type="text" name="montageWorkPrice" id="montageWorkPrice" class="form-control" value="${montageWorkPrice}"
-                               placeholder="montageWorkPrice">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Стоимость фольги М2.</label>
-                        <input type="text" name="oneQuadratMetterFoilPrice" id="oneQuadratMetterFoilPrice" class="form-control" value="${oneQuadratMetterFoilPrice}"
-                               placeholder="oneQuadratMetterFoilPrice">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Ширина в СМ.</label>
-                        <input type="text" name="widthSM" id="widthSM" class="form-control" value="${widthSM}"
-                               placeholder="widthSM">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Длинна в СМ.</label>
-                        <input type="text" name="lengthSM" id="lengthSM" class="form-control" value="${lengthSM}"
-                               placeholder="lengthSM">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" name="quantity" id="quantity" class="form-control" value="${quantity}"
-                               class="form-control" placeholder="quantity">
-                    </div>
-
-                    <div class="alert alert-info mt-3" role="alert">
-                        <h3>Result: <span id="result">${result}</span></h3>
-                    </div>
-
+                <div class="alert alert-info mt-3" role="alert">
+                    <h3>Result: <span id="result">${result.result}</span></h3>
+                </div>
+                <div class="col mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
 
-            </div>
-            <div class="col-3"></div>
+            </form>
+
         </div>
+        <div class="col-3"></div>
     </div>
 </div>
 </body>

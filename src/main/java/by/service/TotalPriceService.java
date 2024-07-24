@@ -1,12 +1,38 @@
 package by.service;
 
-public class TotalPriceService {
-    WorkPriceService workPriceService = new WorkPriceService();
-    TotalFoilPriceService totalFoilPriceService = new TotalFoilPriceService();
-    double totalPrice;
+import by.model.VariableParametersOperation;
 
-    public double TotalPrice() {
-        totalPrice = workPriceService.getTotalWorkPrice() + totalFoilPriceService.TotalFoilPrice();
+public class TotalPriceService {
+
+    private static final double COEFFICIENT_METER = 10000;
+    private static final double COEFFICIENT_NDS = 1.25;
+    private static final double COEFFICIENT_WORK = 1.05;
+
+    public double getTotalPrice(VariableParametersOperation variableParametersOperation) {
+        double widthSM = variableParametersOperation.getWidthSM();
+        double lengthSM = variableParametersOperation.getLengthSM();
+        int quantity = variableParametersOperation.getQuantity();
+        double montageWorkPrice = variableParametersOperation.getMontageWorkPrice();
+        double oneOttiskPrice = variableParametersOperation.getOneOttiskPrice();
+        double oneQuadratMetterFoilPrice = variableParametersOperation.getOneQuadratMetterFoilPrice();
+
+        double totalPrice;
+        double quadratMetter;
+        double getTotalFoilExpense;
+        double getTotalWorkPrice;
+
+        int min = 50;
+
+        if ((widthSM * lengthSM) <= min) {
+            quadratMetter = min / COEFFICIENT_METER;
+        } else {
+            quadratMetter = (widthSM * lengthSM) / COEFFICIENT_METER;
+        }
+
+        getTotalFoilExpense = (quantity * quadratMetter * oneQuadratMetterFoilPrice) * COEFFICIENT_NDS;
+        getTotalWorkPrice = (montageWorkPrice + oneOttiskPrice * quantity) * COEFFICIENT_WORK;
+        totalPrice = getTotalWorkPrice + getTotalFoilExpense;
+
         return totalPrice;
     }
 }
